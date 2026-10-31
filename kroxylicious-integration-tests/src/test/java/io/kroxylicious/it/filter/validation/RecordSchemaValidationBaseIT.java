@@ -35,6 +35,7 @@ public abstract class RecordSchemaValidationBaseIT extends RecordValidationBaseI
 
         GenericContainer<?> container = new GenericContainer<>(dockerImageName)
                 .withExposedPorts(CONTAINER_PORT, MANAGEMENT_PORT)
+                .withEnv("QUARKUS_HTTP_IDLE_TIMEOUT", "120s")
                 .waitingFor(Wait.forHttp("/health/ready").forPort(MANAGEMENT_PORT).forStatusCode(200));
 
         container.start();
