@@ -1,0 +1,4 @@
+title: "Add retry resilience and idle timeout for protobuf schema validation tests"
+type: fixed
+issues:
+  - 5199
